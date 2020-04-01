@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Currency Converter</h1>
+      <div class="conversion-dropdown">
+        <input type="number" v-model.number="amountToConvert">
+        <select id="conversion-first" v-model="firstRate">
+          <option disabled value="">Please select one</option>
+          <option v-for="(rate, key) in fetchedData" :value="rate">{{key}}</option>
+        </select>
+      </div>
+      <p>to</p>
+      <div class="conversion-dropdown">
+        <select id="conversion-second" v-model="secondRate">
+          <option disabled value="">Please select one</option>
+          <option v-for="(rate, key) in fetchedData" :value="rate">{{key}}</option>
+        </select>
+      </div>
+      <div id="result" v-if="(firstRate != '' && secondRate != '')">
+        <p>Result: </p>
+        <p> {{convertResult}} </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

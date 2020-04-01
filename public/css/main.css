@@ -1,0 +1,10 @@
+body {
+  background-color: aqua;
+}
+
+#scrollbox {
+  overflow: scroll;
+  width: 80%;
+  height: 300px;
+  border: double;
+}
